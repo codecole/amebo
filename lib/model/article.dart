@@ -1,4 +1,8 @@
+import 'package:amebo/model/source_response.dart';
+import 'package:amebo/model/sources.dart';
+
 class ArticleModel {
+  SourceModel source;
   String author;
   String title;
   String description;
@@ -8,7 +12,8 @@ class ArticleModel {
   String content;
 
   ArticleModel(
-      {this.author,
+      {this.source,
+        this.author,
       this.title,
       this.description,
       this.url,
@@ -17,6 +22,7 @@ class ArticleModel {
       this.content});
 
   ArticleModel.fromJson(dynamic json) {
+    source = SourceModel.fromJson(json['source']);
     author = json["author"];
     title = json["title"];
     description = json["description"];
@@ -24,6 +30,7 @@ class ArticleModel {
     urlToImage = json["urlToImage"];
     publishedAt = json["publishedAt"];
     content = json["content"];
+   
   }
 
   Map<String, dynamic> toJson() {
@@ -35,6 +42,7 @@ class ArticleModel {
     map["urlToImage"] = urlToImage;
     map["publishedAt"] = publishedAt;
     map["content"] = content;
+
     return map;
   }
 }

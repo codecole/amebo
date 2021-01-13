@@ -3,9 +3,11 @@ import 'package:amebo/model/article_response.dart';
 import 'package:amebo/model/source_response.dart';
 import 'package:dio/dio.dart';
 
+import 'api.dart';
+
 class NewsRepository {
   static String mainUrl = "https://newsapi.org/v2";
-  final String apiKey = "Here is your api";
+  final String apiKey = APIKey;
 
   final Dio _dio = Dio();
 
@@ -28,7 +30,7 @@ class NewsRepository {
 
   //get the top headlines from API
   Future<ArticleResponse> getTopHeadlines() async {
-    var params = {"apiKey": apiKey, "country": "us"};
+    var params = {"apiKey": apiKey, "country": "ng"};
     try {
       Response response =
           await _dio.get(getTopHeadlinesUrl, queryParameters: params);

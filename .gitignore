@@ -1,3 +1,7 @@
+
+#app
+./lib/repository/api.dart
+
 # Miscellaneous
 *.class
 *.log

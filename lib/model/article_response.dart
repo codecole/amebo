@@ -23,9 +23,9 @@ class ArticleResponse {
       map["articles"] = articles.map((v) => v.toJson()).toList();
     }
     return map;
-  }
-
-  ArticleResponse.withError(String errorValue)
+  } ArticleResponse.withError(String errorValue)
       : articles = List(),
         error = errorValue;
+
+
 }

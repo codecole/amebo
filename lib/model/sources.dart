@@ -1,4 +1,4 @@
-class Sources {
+class SourceModel {
   String id;
   String name;
   String description;
@@ -7,7 +7,7 @@ class Sources {
   String language;
   String country;
 
-  Sources({
+  SourceModel({
       this.id, 
       this.name, 
       this.description, 
@@ -16,7 +16,7 @@ class Sources {
       this.language, 
       this.country});
 
-  Sources.fromJson(dynamic json) {
+  SourceModel.fromJson(dynamic json) {
     id = json["id"];
     name = json["name"];
     description = json["description"];
